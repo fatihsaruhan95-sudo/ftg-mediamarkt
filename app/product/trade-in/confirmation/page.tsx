@@ -2,6 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -23,7 +24,7 @@ const QUESTIONS = [
   "Ürünün Wi-Fi veya Bluetooth bağlantısında problem var mı?",
 ];
 
-export default function ConfirmationPage() {
+function ConfirmationContent() {
   const searchParams = useSearchParams();
   const brandId = searchParams.get("brand") ?? "apple";
   const modelId = searchParams.get("model") ?? "";
@@ -163,4 +164,8 @@ export default function ConfirmationPage() {
       </div>
     </>
   );
+}
+
+export default function ConfirmationPage() {
+  return <Suspense fallback={null}><ConfirmationContent /></Suspense>;
 }

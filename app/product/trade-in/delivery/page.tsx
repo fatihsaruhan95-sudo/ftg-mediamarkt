@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -22,7 +22,7 @@ const DISTRICTS: Record<string, string[]> = {
   default: ["Merkez"],
 };
 
-export default function DeliveryPage() {
+function DeliveryContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const brandId = searchParams.get("brand") ?? "apple";
@@ -273,4 +273,8 @@ export default function DeliveryPage() {
       </div>
     </>
   );
+}
+
+export default function DeliveryPage() {
+  return <Suspense fallback={null}><DeliveryContent /></Suspense>;
 }

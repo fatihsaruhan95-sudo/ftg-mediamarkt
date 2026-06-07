@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState, useRef, useEffect } from "react";
+import { Suspense, useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -23,7 +23,7 @@ const QUESTIONS = [
   "Ürünün Wi-Fi veya Bluetooth bağlantısında problem var mı?",
 ];
 
-export default function QuestionsPage() {
+function QuestionsContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const brandId = searchParams.get("brand") ?? "apple";
@@ -223,4 +223,8 @@ export default function QuestionsPage() {
       </div>
     </>
   );
+}
+
+export default function QuestionsPage() {
+  return <Suspense fallback={null}><QuestionsContent /></Suspense>;
 }

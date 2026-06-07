@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
@@ -14,7 +14,7 @@ import {
 import PDPContent from "@/components/PDPContent";
 import { MODELS } from "./models";
 
-export default function ModelSelectionPage() {
+function ModelContent() {
   const searchParams = useSearchParams();
   const brand = searchParams.get("brand") ?? "apple";
   const [selected, setSelected] = useState<string | null>(searchParams.get("model"));
@@ -167,4 +167,8 @@ export default function ModelSelectionPage() {
       </div>
     </>
   );
+}
+
+export default function ModelSelectionPage() {
+  return <Suspense fallback={null}><ModelContent /></Suspense>;
 }

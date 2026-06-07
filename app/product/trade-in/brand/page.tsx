@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +10,7 @@ import { X, Search, ChevronLeft, ChevronRight, Info } from "lucide-react";
 import PDPContent from "@/components/PDPContent";
 import { BRANDS } from "./brands";
 
-export default function BrandSelectionPage() {
+function BrandContent() {
   const searchParams = useSearchParams();
   const [selected, setSelected] = useState<string | null>(searchParams.get("brand"));
   const [query, setQuery] = useState("");
@@ -157,4 +157,8 @@ export default function BrandSelectionPage() {
       </div>
     </>
   );
+}
+
+export default function BrandSelectionPage() {
+  return <Suspense fallback={null}><BrandContent /></Suspense>;
 }

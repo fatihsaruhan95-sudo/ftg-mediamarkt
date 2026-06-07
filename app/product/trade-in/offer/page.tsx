@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState, useEffect } from "react";
+import { Suspense, useState, useEffect } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { X, ChevronLeft, ChevronRight, Check, Info } from "lucide-react";
@@ -24,7 +24,7 @@ const LOADING_STEPS = [
   "Ön teklif hazırlanıyor...",
 ];
 
-export default function OfferPage() {
+function OfferContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const brandId = searchParams.get("brand") ?? "apple";
@@ -207,4 +207,8 @@ export default function OfferPage() {
       </div>
     </>
   );
+}
+
+export default function OfferPage() {
+  return <Suspense fallback={null}><OfferContent /></Suspense>;
 }

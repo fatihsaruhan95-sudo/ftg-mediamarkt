@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { X, ChevronLeft, ChevronRight, Info } from "lucide-react";
@@ -43,7 +43,7 @@ function InputField({
   );
 }
 
-export default function SummaryPage() {
+function SummaryContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const brandId = searchParams.get("brand") ?? "apple";
@@ -302,4 +302,8 @@ export default function SummaryPage() {
       </div>
     </>
   );
+}
+
+export default function SummaryPage() {
+  return <Suspense fallback={null}><SummaryContent /></Suspense>;
 }
