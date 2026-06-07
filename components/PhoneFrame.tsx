@@ -25,7 +25,7 @@ export default function PhoneFrame({ children }: { children: React.ReactNode }) 
   }, []);
 
   if (isMobile) {
-    return <div className="h-[100dvh] w-screen overflow-hidden bg-white">{children}</div>;
+    return <div className="relative h-[100dvh] w-screen overflow-hidden bg-white">{children}</div>;
   }
 
   return (
