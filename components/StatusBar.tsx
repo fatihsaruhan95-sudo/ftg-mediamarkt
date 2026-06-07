@@ -10,7 +10,7 @@ export default function StatusBar({
 }) {
   const fg = variant === "light" ? "#ffffff" : "#000000";
   return (
-    <div className="pointer-events-none absolute inset-x-0 top-0 z-50 flex h-[54px] items-center justify-between px-[28px] pt-[14px]">
+    <div className="pointer-events-none absolute inset-x-0 top-0 z-50 hidden h-[54px] items-center justify-between px-[28px] pt-[14px] sm:flex">
       <span
         className="text-[17px] font-semibold tracking-[-0.4px]"
         style={{ color: fg, fontFamily: "SF Pro Text, system-ui" }}

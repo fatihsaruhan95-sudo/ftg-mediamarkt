@@ -34,7 +34,7 @@ function CartContent() {
       {/* Fixed header */}
       <div className="shrink-0 bg-[#DF0000]">
         <StatusBar variant="light" />
-        <div className="flex w-full items-center justify-between px-[20px] pt-[54px] pb-[12px]">
+        <div className="status-bar-pt flex w-full items-center justify-between px-[20px] pt-[54px] pb-[12px]">
           <div className="flex items-center gap-[8px]">
             <Menu className="h-[24px] w-[24px] text-white" strokeWidth={2.2} />
             <div className="relative h-[56px] w-[56px]">
