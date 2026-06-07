@@ -47,7 +47,7 @@ function DeliveryContent() {
       <div className="absolute inset-0 z-30 bg-black/60" />
 
       {/* Sheet */}
-      <div className="absolute inset-x-0 bottom-0 z-40 flex h-[818px] max-h-[818px] flex-col rounded-tl-[38px] rounded-tr-[38px] bg-white shadow-[0_15px_37.5px_rgba(0,0,0,0.18)]">
+      <div className="absolute inset-x-0 bottom-0 z-40 flex flex-col rounded-tl-[38px] rounded-tr-[38px] bg-white shadow-[0_15px_37.5px_rgba(0,0,0,0.18)]" style={{ height: "min(818px, 92dvh)", maxHeight: "92dvh" }}>
         {/* Toolbar */}
         <div className="flex shrink-0 flex-col items-center gap-[4px] pt-[5px] pb-[10px]">
           <div className="h-[5px] w-[36px] rounded-full bg-[#ccc]" />
@@ -247,7 +247,7 @@ function DeliveryContent() {
         </div>
 
         {/* Footer */}
-        <div className="shrink-0 border-t border-mm-border bg-white px-[20px] pt-[12px] pb-[48px]">
+        <div className="shrink-0 border-t border-mm-border bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "max(env(safe-area-inset-bottom), 20px)" }}>
           <div className="flex items-center gap-[12px]">
             <Link
               href={`/product/trade-in/questions?${params}`}

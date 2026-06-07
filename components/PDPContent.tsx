@@ -215,7 +215,7 @@ export default function PDPContent({
       {/* /Scrollable content */}
 
       {/* Sticky footer */}
-      <div className="shrink-0 flex items-center gap-[12px] border-t border-[#eef0f3] bg-white px-[20px] pt-[12px] pb-[24px]">
+      <div className="shrink-0 flex items-center gap-[12px] border-t border-[#eef0f3] bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "max(env(safe-area-inset-bottom), 16px)" }}>
         <div className="flex-1">
           <p className="text-[16px] font-black italic text-mm-black">₺ 134.999</p>
           <p className="text-[10px] font-medium text-mm-black underline">
