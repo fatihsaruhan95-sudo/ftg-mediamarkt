@@ -186,7 +186,7 @@ function OfferContent() {
         </div>
 
         {/* Footer */}
-        <div className="shrink-0 border-t border-mm-border bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "max(env(safe-area-inset-bottom), 20px)" }}>
+        <div className="shrink-0 border-t border-mm-border bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "8px" }}>
           <div className="flex items-center gap-[12px]">
             <Link
               href={`/product/trade-in/model?brand=${brandId}&model=${modelId}`}

@@ -204,7 +204,7 @@ function CartContent() {
       </div>
 
       {/* Sticky footer */}
-      <div className="absolute inset-x-0 bottom-0 flex flex-col gap-[8px] border-t border-[#eef0f3] bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "max(env(safe-area-inset-bottom), 16px)" }}>
+      <div className="absolute inset-x-0 bottom-0 flex flex-col gap-[8px] border-t border-[#eef0f3] bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "8px" }}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-[8px]">
             <p className="text-[14px] font-medium text-mm-black">Toplam</p>
@@ -304,7 +304,7 @@ function CartContent() {
             </div>
 
             {/* Sheet footer */}
-            <div className="shrink-0 border-t border-mm-border bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "max(env(safe-area-inset-bottom), 20px)" }}>
+            <div className="shrink-0 border-t border-mm-border bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "8px" }}>
               <button
                 onClick={() => setShowDetail(false)}
                 className="flex h-[48px] w-full items-center justify-center gap-[4px] rounded-[6px] bg-black text-white"
