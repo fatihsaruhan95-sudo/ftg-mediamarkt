@@ -55,7 +55,7 @@ export default function BottomSheet({
 
         {/* Footer with 32px bottom padding (project rule) */}
         {footer && (
-          <div className="shrink-0 border-t border-mm-border bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "max(env(safe-area-inset-bottom), 20px)" }}>
+          <div className="shrink-0 border-t border-mm-border bg-white px-[20px] pt-[12px]" style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 8px)" }}>
             {footer}
           </div>
         )}
