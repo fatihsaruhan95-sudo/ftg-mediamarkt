@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +13,7 @@ import StatusBar from "@/components/StatusBar";
 import { BRANDS } from "../trade-in/brand/brands";
 import { MODELS } from "../trade-in/model/models";
 
-export default function CartPage() {
+function CartContent() {
   const searchParams = useSearchParams();
   const brandId = searchParams.get("brand") ?? "apple";
   const modelId = searchParams.get("model") ?? "";
@@ -316,5 +316,13 @@ export default function CartPage() {
         </>
       )}
     </div>
+  );
+}
+
+export default function CartPage() {
+  return (
+    <Suspense fallback={null}>
+      <CartContent />
+    </Suspense>
   );
 }
