@@ -162,11 +162,12 @@ export default function PDPContent({
               className="object-contain"
             />
           </div>
-          <p className="flex-1 truncate text-[12px] leading-[1.3] text-white">
+          <p className="flex-1 text-[12px] leading-[1.3] text-white">
+            Eski cihazınızı{" "}
             <span className="rounded-[2px] bg-black px-[4px] py-[1px] font-black">
-              ₺134.999
+              ₺88.500'e
             </span>{" "}
-            değerinde yeni cihazı hemen al
+            varan kazançla hemen yenileyin
           </p>
           <div className="flex items-center gap-[2px] rounded-[4px] bg-black pl-[12px] pr-[4px] py-[8px]">
             <span className="text-[14px] font-semibold text-white">Başla</span>
